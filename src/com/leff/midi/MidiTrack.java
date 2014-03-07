@@ -34,7 +34,7 @@ import com.leff.midi.util.VariableLengthInt;
 
 public class MidiTrack
 {
-    private static final boolean VERBOSE = false;
+    private static final boolean VERBOSE = true;
 
     public static final byte[] IDENTIFIER = { 'M', 'T', 'r', 'k' };
 

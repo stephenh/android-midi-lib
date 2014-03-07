@@ -206,4 +206,18 @@ public class MidiFile
         mTrackCount = MidiUtil.bytesToInt(buffer, 10, 2);
         mResolution = MidiUtil.bytesToInt(buffer, 12, 2);
     }
+    
+    public void dumpToConsole()
+    {
+        System.out.println("MIDI File Type: " + mType);
+        System.out.println("Resolution: " + mResolution);
+        System.out.println("Track Count: " + mTrackCount);
+        System.out.println("Tracks: ");
+        
+        for(int i = 0; i < mTrackCount; i++)
+        {
+            System.out.println("Track " + i + ": ---");
+            mTracks.get(i).dumpEvents();
+        }
+    }
 }
