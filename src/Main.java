@@ -14,6 +14,8 @@ public class Main
         {
             mf = new MidiFile(input);
             mf.dumpToConsole();
+            
+            System.out.println("Success!");
         }
         catch(IOException e)
         {
