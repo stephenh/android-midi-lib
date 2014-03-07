@@ -195,11 +195,7 @@ public class MidiFile
     {
         if(!MidiUtil.bytesEqual(buffer, IDENTIFIER, 0, 4))
         {
-            System.out.println("File identifier not MThd. Exiting");
-            mType = 0;
-            mTrackCount = 0;
-            mResolution = DEFAULT_RESOLUTION;
-            return;
+            throw new IllegalStateException("File identifier did not match MThd!");
         }
 
         mType = MidiUtil.bytesToInt(buffer, 8, 2);
